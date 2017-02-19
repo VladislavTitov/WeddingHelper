@@ -163,11 +163,53 @@ a:link, a:visited{
 
 /* Bride page */
 
+#bride-page-body{
+	background: url("../img/brideO.png") no-repeat center center fixed;
+     background-size: cover; 
+    -webkit-background-size: cover;
+}
 
+/* Budget page */
+#budget-page-body{
+	background: url("../img/budgetO.png") no-repeat center center fixed;
+     background-size: cover; 
+    -webkit-background-size: cover;
+}
 
+/* Groom friends page */
+#gf-page-body{
+	background: url("../img/gfO.png") no-repeat center center fixed;
+     background-size: cover; 
+    -webkit-background-size: cover;
+}
 
+/* Bride friends page */
+#bf-page-body{
+	background: url("../img/bfO.png") no-repeat center center fixed;
+     background-size: cover; 
+    -webkit-background-size: cover;
+}
 
+/* Guests page */
+#guests-page-body{
+	background: url("../img/guestsO.png") no-repeat center center fixed;
+     background-size: cover; 
+    -webkit-background-size: cover;
+}
 
+/* Notes page */
+#notes-page-body{
+	background: url("../img/notesO.png") no-repeat center center fixed;
+     background-size: cover; 
+    -webkit-background-size: cover;
+}
 
+/* Tasks page */
+
+#tasks-page-body{
+	background: url("../img/tasksO.png") no-repeat center center fixed;
+     background-size: cover; 
+    -webkit-background-size: cover;
+}
 
 
