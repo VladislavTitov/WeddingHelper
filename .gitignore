@@ -1,0 +1,6 @@
+.metadata/
+.settings/
+.sign/
+*.wgt
+.tproject
+.sdk_delta.info
