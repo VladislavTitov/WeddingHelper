@@ -1,0 +1,183 @@
+@font-face{
+	font-family: 'Dancing Script';
+	src: url("fonts/DancingScript-Bold.ttf") format("truetype");
+	font-weight: bold;
+	font-style: normal;
+}
+@font-face{
+	font-family: 'Dancing Script';
+	src: url("fonts/DancingScript-Regular.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* General */
+
+body{
+	/* background-image: url("../img/b.jpg"); */
+	background-color: #fff;
+	font-family: 'Dancing Script', cursive;
+	font-size: 1.5em;
+	font-weight: bold;
+	margin: 0;
+}
+
+header, footer{
+	z-index: 99;
+	background-color: #f0f7fd;
+	text-align: center;
+	padding: 4px;
+	width: 100%;
+}
+
+ul{
+	-webkit-padding-start: 0px;
+    -webkit-margin-before: 5px;
+    -webkit-margin-after: 5px;
+	list-style: none; 	
+}
+
+a:link, a:visited{
+	color: #000;
+}
+
+/* Main page */
+
+#main-page-body{
+	margin: 37px 0;
+}
+
+#main-page-header{
+	position: fixed;
+	top: 0;
+}
+
+#main-page-footer{
+	position: fixed;
+	bottom: 0;
+}
+
+.input{
+	background: #fff;	
+	width: 200px;
+	position: absolute;
+	right: 0px;
+}
+
+.slideshow{
+	margin: 0 auto;
+}
+
+.contents{
+	-webkit-padding-start: 0px;
+	-webkit-margin-before: 5px;
+    -webkit-margin-after: 5px;
+
+	list-style: none;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	  
+	-webkit-flex-flow: row wrap;
+	justify-content: center;
+}
+
+.icon-container{
+	background-color: #f2f7ff;
+	box-shadow: -3px 3px 4px 0px #dfdfdf;
+	margin: 4px;
+	width: 100%;
+	height: 150px;
+	overflow: hidden;
+	/*border: 1px solid rgba(111, 79, 23, 0.46);
+	border-radius: 5px; */
+	position: relative;
+	cursor: pointer;
+}
+
+.dark{
+	width: 100%;
+	height: 65px;
+	position: absolute;
+	top: 95px;
+	left: 0;
+	background-image: linear-gradient(transparent, #333);
+	opacity: 0.5;
+	z-index: 10;
+}
+
+.icon-container:active{
+	box-shadow: -3px 3px 4px 0px #d0d0d0;
+	background: #ededed;
+}
+
+.icon{
+	position: relative;
+	top: -50px;
+	width: 100%;
+}
+
+.icon-label{
+	z-index: 20;
+	display: block;
+	position: absolute;
+	text-align: initial;
+	top: 73%;
+	width: initial;
+	left: 20px;
+	color: #fff;
+}
+
+
+/* Groom page */
+
+#groom-page-body{
+	z-index: -1;
+	opacity: 0.001;
+	background: url("../img/groom.jpg") no-repeat center center fixed;
+    background-size: cover; 
+    -webkit-background-size: cover;
+}
+
+.ex{
+	z-index: 2;
+}
+
+.list-item{
+	color: #fff;
+	background-color: rgba(0, 0, 0, 0.5);
+	margin: 2px 0;
+	/* border-bottom: 1px dashed #000; */
+	padding: 10px;
+	position: relative;
+}
+
+.item-label{
+	position: relative;
+	left: 5%;
+}
+
+.item-check{
+
+	height: 1.5em;
+	width: 1.5em;
+	position: absolute;
+	left: 90%;
+}
+
+/* Bride page */
+
+#groom-page-body{
+	background: url("../img/groomO.png") no-repeat center center fixed;
+     background-size: cover; 
+    -webkit-background-size: cover;
+}
+
+
+
+
+
+
+

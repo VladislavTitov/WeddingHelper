@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="Main page" />
+
+    <title>Main page</title>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <!-- <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet"> -->
+    <script src="js/main.js"></script>
+    <!-- <script type="text/javascript" src="js/image_slide.js"></script> -->
+</head>
+
+<body id="main-page-body">
+	<header id="main-page-header">Main page</header>
+
+	<div class="wrap-content">
+	<section class="slideshow">
+        <img class="slides" src='img/slide_1.jpg' id="image_1" width="100%"/>
+        <img class="slides" src='img/slide_2.jpg' id="image_2" width="100%"/>
+        <img class="slides" src='img/slide_3.jpg' id="image_3" width="100%"/>
+        <img class="slides" src='img/slide_4.jpg' id="image_4" width="100%"/>
+    </section>
+
+	<div id="main" class="page">
+        <ul class="contents">
+			<li class="icon-container">
+				<a href="html/groom.html">
+					<img class="icon" src="img/groom.jpg">
+					<div class="dark"></div>
+					<div class="icon-label">Groom</div>
+				</a>
+			</li>
+
+			<li class="icon-container">
+				<a href="html/bride.html">
+					<img class="icon" src="img/bride.jpg">
+					<div class="dark"></div>
+					<div class="icon-label">Bride</div>
+				</a>
+			</li>
+
+			<li class="icon-container">
+				<a href="html/trends.html">
+					<img class="icon" src="img/trends.jpg" style="top: 0;">
+					<div class="dark"></div>
+					<div class="icon-label">Trends</div>
+				</a>
+			</li>
+
+			<li class="icon-container">
+				<a href="html/gf.html">
+					<img class="icon" src="img/gf.jpg" style="top: -25px;">
+					<div class="dark"></div>
+					<div class="icon-label">Groom friends</div>
+				</a>
+			</li>
+
+			<li class="icon-container">
+				<a href="html/bf.html">
+					<img class="icon" src="img/bf.jpg" style="top: -28px;">
+					<div class="dark"></div>
+					<div class="icon-label">Bride friends</div>
+				</a>
+			</li>
+
+			<li class="icon-container">
+				<a href="html/guests.html">
+					<img class="icon" src="img/guests.jpg">
+					<div class="dark"></div>
+					<div class="icon-label">Guests</div>
+				</a>
+			</li>
+
+			<li class="icon-container">
+				<a href="html/budget.html">
+					<img class="icon" src="img/budget.jpg">
+					<div class="dark"></div>
+					<div class="icon-label">Budget</div>
+				</a>
+			</li>
+
+			<li class="icon-container">
+				<a href="html/tasks.html">
+					<img class="icon" src="img/tasks.jpg">
+					<div class="dark"></div>
+					<div class="icon-label">Tasks</div>
+				</a>
+			</li>
+
+			<li class="icon-container">
+				<a href="html/notes.html">
+					<img class="icon" src="img/notes.jpg" style="top: 0;">
+					<div class="dark"></div>
+					<div class="icon-label">Notes</div>
+				</a>
+			</li>
+			</ul>
+        </div>
+    </div>
+	<footer id="main-page-footer">Счетчик</footer>
+
+	<script type="text/javascript">
+		var myIndex = 0;
+		carousel();
+
+		function carousel() {
+		    var i;
+		    var x = document.getElementsByClassName("slides");
+		    for (i = 0; i < x.length; i++) {
+		       x[i].style.display = "none";
+		    }
+		    myIndex++;
+		    if (myIndex > x.length) {myIndex = 1}
+		    x[myIndex-1].style.display = "block";
+		    setTimeout(carousel, 3000);
+		}
+	</script>
+
+</body>
+</html>
