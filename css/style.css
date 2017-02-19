@@ -134,15 +134,9 @@ a:link, a:visited{
 /* Groom page */
 
 #groom-page-body{
-	z-index: -1;
-	opacity: 0.001;
-	background: url("../img/groom.jpg") no-repeat center center fixed;
-    background-size: cover; 
+	background: url("../img/groomO.png") no-repeat center center fixed;
+     background-size: cover; 
     -webkit-background-size: cover;
-}
-
-.ex{
-	z-index: 2;
 }
 
 .list-item{
@@ -169,11 +163,7 @@ a:link, a:visited{
 
 /* Bride page */
 
-#groom-page-body{
-	background: url("../img/groomO.png") no-repeat center center fixed;
-     background-size: cover; 
-    -webkit-background-size: cover;
-}
+
 
 
 
