@@ -6,13 +6,13 @@
     <meta name="description" content="Groom page" />
 	<title>Groom</title>
     <link rel="stylesheet" href="../css/style.css"/>
-    <script src="../js/main.js"></script>
     <script src="../js/jquery-3.1.1.min.js"></script>
+    <script src="../js/main.js"></script>
 </head>
 <body id="groom-page-body">
 	<header>Groom</header>
     <form>
-        <ul>
+        <ul class="list">
             <li class="list-item">
                 <div>
                     <label class="item-label">Groom suit</label>
@@ -51,17 +51,17 @@
             </li>
         </ul>	
     </form>
-	<script type="text/javascript">
-		$().ready(function () {
-			$("li").click(function () {
-				if( $(this).find("input[type='checkbox']").attr("checked") ){
-					$(this).find("input[type='checkbox']").removeAttr("checked");
-				}else{
-					$(this).find("input[type='checkbox']").attr("checked", true);
-				}
-			})
-		});
-	</script>
+	<!-- <script type="text/javascript">
+        $().ready(function () {
+            $("li").click(function () {
+                if( $(this).find("input[type='checkbox']").attr("checked") ){
+                    $(this).find("input[type='checkbox']").removeAttr("checked");
+                }else{
+                    $(this).find("input[type='checkbox']").attr("checked", true);
+                }
+            })
+        });
+    </script> -->
 
 </body>
 </html>
