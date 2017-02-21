@@ -1,6 +1,10 @@
 #delete
 #add
+res/wgt/css/flickity.css
+res/wgt/js/flickity.pkgd.min.js
 #modify
 res/wgt/author-signature.xml
 res/wgt/signature1.xml
+res/wgt/css/style.css
+res/wgt/html/gf.html
 res/wgt/index.html

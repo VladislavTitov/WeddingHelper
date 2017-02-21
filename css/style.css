@@ -46,7 +46,7 @@ ul.list li:active{
 	background-color: #000;
 }
 
-input[type="text"]{
+input[type="text"], input[type="number"]{
 	color: #000;
 	font-size: 1em;
 	font-family: 'Dancing Script', cursive;
@@ -60,6 +60,36 @@ input[type="text"]{
 
 input[type="text"]:focus{
     border-bottom: 1px solid #f0f7fd;
+}
+
+.btn-container{
+	display: inline-block;
+}
+
+.modal{
+	display: none;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 9999;
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
+	pointer-events: none;
+}
+
+.modal:target{
+	display: block;
+	pointer-events: auto;
+}
+
+.modal > div{
+	width: 80%;
+	margin: 100px auto;
+	background: #fff;
 }
 
 /* Main page */
@@ -175,7 +205,6 @@ input[type="text"]:focus{
 }
 
 .item-check{
-
 	height: 1.5em;
 	width: 1.5em;
 	position: absolute;
@@ -202,6 +231,11 @@ input[type="text"]:focus{
 	background: url("../img/gfO.png") no-repeat center center fixed;
      background-size: cover; 
     -webkit-background-size: cover;
+}
+
+#gf-page-footer{
+	position: fixed;
+	bottom: 0;
 }
 
 /* Bride friends page */
