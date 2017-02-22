@@ -204,6 +204,37 @@ a:link, a:visited{
     -webkit-background-size: cover;
 }
 
+
+
+.notes {
+		background: transparent;
+	    border: 1px solid #EEEEEE;
+        box-shadow: 1px 1px 0 #DDDDDD;
+        display: block;
+        font-family: 'Dancing Script',cursive;
+        font-size: 1em;
+        line-height: 50px;
+        margin: 2% auto;
+        padding: 2% 0 0 2%;
+        resize: none;
+        height: 550px;
+        width: 100%;
+
+        background-image: -moz-linear-gradient(top , transparent, transparent 49px,#E7EFF8 0px);
+        background-image: -webkit-linear-gradient(top , transparent, transparent 49px,#E7EFF8 0);
+       
+        background-size: 100% 50px;
+
+}
+
+
+.notes:focus {
+    outline: none;
+}
+.save-in-notes{
+	text-align: right;
+}
+
 /* Tasks page */
 
 #tasks-page-body{
