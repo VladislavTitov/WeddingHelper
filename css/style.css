@@ -39,6 +39,7 @@ ul{
 
 a:link, a:visited{
 	color: #000;
+	text-decoration: none;
 }
 
 ul.list li:active{
@@ -56,6 +57,7 @@ input[type="text"], input[type="number"]{
 	border-bottom: 1px solid #aaa;
 	background-color: transparent;
 	padding: 2px 3px;
+	margin: 3px 0;
 }
 
 input[type="text"]:focus{
@@ -63,7 +65,29 @@ input[type="text"]:focus{
 }
 
 .btn-container{
-	display: inline-block;
+	display: flex;
+	position: relative;
+	margin: 15px auto 6px auto;
+}
+
+.btn-container-center{
+	justify-content: center;
+}
+
+.btn-container-right{
+	justify-content: flex-end;
+}
+
+.btn{
+	background-color: #fff;
+	margin-left: 3px;
+	border: 1px solid #d0d0d0;
+    border-radius: 8%;
+    padding: 6px 21px;
+}
+
+.btn:active{
+	background-color: #dedede;
 }
 
 .modal{
@@ -87,10 +111,31 @@ input[type="text"]:focus{
 }
 
 .modal > div{
+	padding: 10px;
 	width: 80%;
-	margin: 100px auto;
+	margin: 2em auto;
 	background: #fff;
+	box-shadow: -3px 3px 10px rgba(0, 0, 0, 0.8);
 }
+
+.modal > div > div{
+	display: inline-block;
+	margin: auto 5%;
+	width: 90%; 
+}
+
+.modal input[type="checkbox"]{
+	width: 1.3em;
+    height: 1.3em;
+    margin: 11px 8px;
+}
+
+/* .content-modal-container{
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	-webkit-flex-flow: row wrap;
+} */
 
 /* Main page */
 
@@ -174,9 +219,9 @@ input[type="text"]:focus{
 	z-index: 20;
 	display: block;
 	position: absolute;
-	text-align: initial;
+	/* text-align: initial;
+	width: initial; */
 	top: 73%;
-	width: initial;
 	left: 20px;
 	color: #fff;
 }
@@ -211,6 +256,8 @@ input[type="text"]:focus{
 	left: 90%;
 }
 
+
+
 /* Bride page */
 
 #bride-page-body{
@@ -219,12 +266,16 @@ input[type="text"]:focus{
     -webkit-background-size: cover;
 }
 
+
+
 /* Budget page */
 #budget-page-body{
 	background: url("../img/budgetO.png") no-repeat center center fixed;
      background-size: cover; 
     -webkit-background-size: cover;
 }
+
+
 
 /* Groom friends page */
 #gf-page-body{
@@ -234,9 +285,10 @@ input[type="text"]:focus{
 }
 
 #gf-page-footer{
-	position: fixed;
-	bottom: 0;
+	background-color: transparent;
 }
+
+
 
 /* Bride friends page */
 #bf-page-body{
@@ -245,6 +297,8 @@ input[type="text"]:focus{
     -webkit-background-size: cover;
 }
 
+
+
 /* Guests page */
 #guests-page-body{
 	background: url("../img/guestsO.png") no-repeat center center fixed;
@@ -252,12 +306,16 @@ input[type="text"]:focus{
     -webkit-background-size: cover;
 }
 
+
+
 /* Notes page */
 #notes-page-body{
 	background: url("../img/notesO.png") no-repeat center center fixed;
      background-size: cover; 
     -webkit-background-size: cover;
 }
+
+
 
 /* Tasks page */
 
