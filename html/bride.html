@@ -6,92 +6,118 @@
     <meta name="description" content="Bride page" />
 	<title>Bride</title>
     <link rel="stylesheet" href="../css/style.css"/>
-    <script src="../js/jquery-3.1.1.min.js"></script>
-    <script src="../js/main.js"></script>
 </head>
 <body id="bride-page-body">
 	<header>Bride</header>
-    <form>
-        <ul class="list" ">
-            <li>
-                <div class="list-item">
-                    <label class="item-label">Wedding dress</label>
-                    <input class="item-check" type="checkbox">
-                </div>
-            </li>
+    <ul class="list" id="bride-list">
+        <li>
+            <div class="list-item">
+                <label class="item-label">Wedding dress</label>
+                <input class="item-check" type="checkbox" name="bride.dress">
+            </div>
+        </li>
 
-             <li>
-                <div class="list-item">
-                    <label class="item-label">Veil</label>
-                    <input class="item-check" type="checkbox">
-                </div>
-            </li>
-
-
-             <li>
-                <div class="list-item">
-                    <label class="item-label">Shoes</label>
-                    <input class="item-check" type="checkbox">
-                </div>
-            </li>
+         <li>
+            <div class="list-item">
+                <label class="item-label">Veil</label>
+                <input class="item-check" type="checkbox" name="bride.veil">
+            </div>
+        </li>
 
 
-             <li>
-                <div class="list-item">
-                    <label class="item-label">Garter</label>
-                    <input class="item-check" type="checkbox">
-                </div>
-            </li>
+         <li>
+            <div class="list-item">
+                <label class="item-label">Shoes</label>
+                <input class="item-check" type="checkbox" name="bride.shoes">
+            </div>
+        </li>
 
-            <li>
-                <div class="list-item">
-                    <label class="item-label">Tights/stockings</label>
-                    <input class="item-check" type="checkbox">
-                </div>
-            </li>
 
-			<li>
-                <div class="list-item">
-                    <label class="item-label">Gloves</label>
-                    <input class="item-check" type="checkbox">
-                </div>
-            </li>
+         <li>
+            <div class="list-item">
+                <label class="item-label">Garter</label>
+                <input class="item-check" type="checkbox" name="bride.garter">
+            </div>
+        </li>
 
-            <li>
-                <div class="list-item">
-                    <label class="item-label">Bouquet</label>
-                    <input class="item-check" type="checkbox">
-                </div>
-            </li>
+        <li>
+            <div class="list-item">
+                <label class="item-label">Tights/stockings</label>
+                <input class="item-check" type="checkbox" name="bride.tights">
+            </div>
+        </li>
 
-            <li>
-                <div class="list-item">
-                    <label class="item-label">Hairstyle</label>
-                    <input class="item-check" type="checkbox">
-                </div>
-            </li>
+		<li>
+            <div class="list-item">
+                <label class="item-label">Gloves</label>
+                <input class="item-check" type="checkbox" name="bride.gloves">
+            </div>
+        </li>
 
-            <li>
-                <div class="list-item">
-                    <label class="item-label">Makeup</label>
-                    <input class="item-check" type="checkbox">
-                </div>
-            </li>
+        <li>
+            <div class="list-item">
+                <label class="item-label">Bouquet</label>
+                <input class="item-check" type="checkbox" name="bride.bouquet">
+            </div>
+        </li>
 
-            <li>
-                <div class="list-item">
-                    <label class="item-label">Manicure</label>
-                    <input class="item-check" type="checkbox">
-                </div>
-            </li>
+        <li>
+            <div class="list-item">
+                <label class="item-label">Hairstyle</label>
+                <input class="item-check" type="checkbox" name="bride.hairstyle">
+            </div>
+        </li>
 
-            <li>
-                <div class="list-item">
-                    <label class="item-label">Hen-party</label>
-                    <input class="item-check" type="checkbox">
-                </div>
-            </li>
-        </ul>	
-    </form>
+        <li>
+            <div class="list-item">
+                <label class="item-label">Makeup</label>
+                <input class="item-check" type="checkbox" name="bride.makeup">
+            </div>
+        </li>
+
+        <li>
+            <div class="list-item">
+                <label class="item-label">Manicure</label>
+                <input class="item-check" type="checkbox" name="bride.manicure">
+            </div>
+        </li>
+
+        <li>
+            <div class="list-item">
+                <label class="item-label">Hen-party</label>
+                <input class="item-check" type="checkbox" name="bride.party">
+            </div>
+        </li>
+    </ul>	
+
+    <script type="text/javascript" src="../js/form2js.js"></script>
+    <script type="text/javascript" src="../js/js2form.js"></script>
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script type="text/javascript">
+        function serializeBride() {
+            var data = form2js(document.getElementById("bride-list"), '.', false);
+            return data;
+        }
+
+        function populateBride(data) {
+            js2form(document.getElementById("bride-list"), data, '.', null, false);
+        }
+        function saveGroom() {
+            save( "bride", serializeBride() );
+        }
+        function restoreGroom() {
+            populateBride( restore( "bride" ) );    
+        }
+
+        $(".item-check").change(function () {
+            saveGroom();
+        });
+
+        $().ready(function () {
+            restoreGroom();
+        });
+        
+    </script>
 </body>
 </html>

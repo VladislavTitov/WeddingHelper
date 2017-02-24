@@ -14,16 +14,42 @@
 <body id="gf-page-body">
 	<header>Groom friends</header>
 
+	<ul >
+		<li class="list-item">
+			<div class="item-label">
+				AFFEFSFESdffsefesffsfsewefwefwfwefwefewfw
+			</div>
+			<div class="item-label">
+				79600767606
+			</div>
+			<div class="item-label">
+				1
+			</div>
+			<div class="btn-container btn-container-right">
+				<a class="btn" href="javascript:confirm('Are you sure?')">Delete</a>
+			</div>
+		</li>
+		<li class="list-item">
+			AFFEFSFES
+		</li>
+		<li class="list-item">
+			AFFEFSFES
+		</li>
+		<li class="list-item">
+			AFFEFSFES
+		</li>
+	</ul>
+
 	<div id="modal" class="modal">
 		<div>
-			<div class="content-modal-container">
-				<div><input type="text" placeholder="Enter name" ></div>
-				<div><input type="text" placeholder="Enter phone number"></div>
-				<div><input type="number" placeholder="Table number"></div>
-				<div><label>Confirmed?<input type="checkbox"></label></div>
+			<div class="content-modal-container" id="form-modal">
+				<div><input type="text" placeholder="Enter name" name="gf.name"></div>
+				<div><input type="text" placeholder="Enter phone number" name="gf.phone"></div>
+				<div><input type="number" placeholder="Table number" name="gf.table"></div>
+				<div><label>Confirmed?<input type="checkbox" name="gf.confirm"></label></div>
 				<div class="btn-container btn-container-right">
-					<a class="btn" href="javascript:window.history.back()" class="save">Save</a>
-					<a class="btn" href="javascript:window.history.back()" class="close">Close</a>
+					<a class="btn save" href="javascript:window.history.back()">Save</a>
+					<a class="btn close" href="javascript:window.history.back()">Close</a>
 				</div>	
 			</div>
 		</div>
@@ -32,6 +58,26 @@
 	<div class="btn-container btn-container-center">
 		<a href="#modal" class="btn">Add friend</a>	
 	</div>
+
+	<script type="text/javascript" src="../js/form2js.js"></script>
+	<script type="text/javascript" src="../js/js2form.js"></script>
+	<script type="text/javascript">
+		function serializeModalForm() {
+			var dataForm = form2js(document.getElementById("form-modal"), '.', true);
+			return dataForm;
+		}
+		function populateModalForm() {
+			var data = {
+				gf:{
+					name : "qwegwfwf",
+					phone: "12342-o0o4=",
+					table: "1223",
+					confirm: "on"
+				}
+			};
+			js2form(document.getElementById("form-modal"), data, '.', null, true);
+		}
+	</script>
 
 </body>
 </html>

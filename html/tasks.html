@@ -8,157 +8,182 @@
 	<title>Tasks</title>
 
     <link rel="stylesheet" href="../css/style.css"/>
-    <script src="../js/jquery-3.1.1.min.js"></script>
-    <script src="../js/main.js"></script>
 </head>
 <body id="tasks-page-body">
 	<header>Tasks</header>
-    <form>
-        <ul class="list">
-            <li>
-                <div class="list-item">
-                    <label class="item-label">Rental of premises</label>
-                    <input class="item-check" type="checkbox">
-                </div>
-            </li>
+    <ul class="list" id="tasks-list">
+        <li>
+            <div class="list-item">
+                <label class="item-label">Rental of premises</label>
+                <input class="item-check" type="checkbox" name="tasks.rental">
+            </div>
+        </li>
 
-             <li>
-                <div class="list-item">
-                    <label class="item-label">Banquet</label>
-                    <input class="item-check" type="checkbox">
-                </div>
-            </li>
-
-
-             <li>
-                <div class="list-item">
-                    <label class="item-label">Glasses</label>
-                    <input class="item-check" type="checkbox">
-                </div>
-            </li>
+         <li>
+            <div class="list-item">
+                <label class="item-label">Banquet</label>
+                <input class="item-check" type="checkbox" name="tasks.banquet">
+            </div>
+        </li>
 
 
-             <li>
-                <div class="list-item">
-                    <label class="item-label">Toastmasters</label>
-                    <input class="item-check" type="checkbox">
-                </div>
-            </li>
+         <li>
+            <div class="list-item">
+                <label class="item-label">Glasses</label>
+                <input class="item-check" type="checkbox" name="tasks.glasses">
+            </div>
+        </li>
 
-            <li>
-                <div class="list-item">
-                    <label class="item-label">Videographer</label>
-                    <input class="item-check" type="checkbox">
-                </div>
-            </li>
 
-			<li>
-                <div class="list-item">
-                    <label class="item-label">Auto</label>
-                    <input class="item-check" type="checkbox">
-                </div>
-            </li>
+         <li>
+            <div class="list-item">
+                <label class="item-label">Toastmasters</label>
+                <input class="item-check" type="checkbox" name="tasks.toastmasters">
+            </div>
+        </li>
 
-            <li>
-                <div class="list-item">
-                    <label class="item-label">Band</label>
-                    <input class="item-check" type="checkbox">
-                </div>
-            </li>
+        <li>
+            <div class="list-item">
+                <label class="item-label">Videographer</label>
+                <input class="item-check" type="checkbox" name="tasks.videographer">
+            </div>
+        </li>
 
-            <li>
-                <div class="list-item">
-                    <label class="item-label">Honeymoon</label>
-                    <input class="item-check" type="checkbox">
-                </div>
-            </li>
+		<li>
+            <div class="list-item">
+                <label class="item-label">Auto</label>
+                <input class="item-check" type="checkbox" name="tasks.auto">
+            </div>
+        </li>
 
-            <li>
-                <div class="list-item">
-                    <label class="item-label">Wedding ring</label>
-                    <input class="item-check" type="checkbox">
-                </div>
-            </li>
+        <li>
+            <div class="list-item">
+                <label class="item-label">Band</label>
+                <input class="item-check" type="checkbox" name="tasks.band">
+            </div>
+        </li>
 
-            <li>
-                <div class="list-item">
-                    <label class="item-label">Certificate</label>
-                    <input class="item-check" type="checkbox">
-                </div>
-            </li>
+        <li>
+            <div class="list-item">
+                <label class="item-label">Honeymoon</label>
+                <input class="item-check" type="checkbox" name="tasks.honeymoon">
+            </div>
+        </li>
 
-            <li>
-                <div class="list-item">
-                    <label class="item-label">Gifts for guests</label>
-                    <input class="item-check" type="checkbox">
-                </div>
-            </li>
+        <li>
+            <div class="list-item">
+                <label class="item-label">Wedding rings</label>
+                <input class="item-check" type="checkbox" name="tasks.rings">
+            </div>
+        </li>
 
-            <li>
-                <div class="list-item">
-                    <label class="item-label">Cushion for rings</label>
-                    <input class="item-check" type="checkbox">
-                </div>
-            </li>
+        <li>
+            <div class="list-item">
+                <label class="item-label">Certificate</label>
+                <input class="item-check" type="checkbox" name="tasks.certificate">
+            </div>
+        </li>
 
-            <li>
-                <div class="list-item">
-                    <label class="item-label">Invitation</label>
-                    <input class="item-check" type="checkbox">
-                </div>
-            </li>
+        <li>
+            <div class="list-item">
+                <label class="item-label">Gifts for guests</label>
+                <input class="item-check" type="checkbox" name="tasks.gifts">
+            </div>
+        </li>
 
-            <li>
-                <div class="list-item">
-                    <label class="item-label">Place cards</label>
-                    <input class="item-check" type="checkbox">
-                </div>
-            </li>
+        <li>
+            <div class="list-item">
+                <label class="item-label">Cushion for rings</label>
+                <input class="item-check" type="checkbox" name="tasks.cushion">
+            </div>
+        </li>
 
-            <li>
-                <div class="list-item">
-                    <label class="item-label">Crockery</label>
-                    <input class="item-check" type="checkbox">
-                </div>
-            </li>
+        <li>
+            <div class="list-item">
+                <label class="item-label">Invitations</label>
+                <input class="item-check" type="checkbox" name="tasks.invitations">
+            </div>
+        </li>
 
-            <li>
-                <div class="list-item">
-                    <label class="item-label">Cake</label>
-                    <input class="item-check" type="checkbox">
-                </div>
-            </li>
+        <li>
+            <div class="list-item">
+                <label class="item-label">Place cards</label>
+                <input class="item-check" type="checkbox" name="tasks.cards">
+            </div>
+        </li>
 
-            <li>
-                <div class="list-item">
-                    <label class="item-label">Box for gifts</label>
-                    <input class="item-check" type="checkbox">
-                </div>
-            </li>
+        <li>
+            <div class="list-item">
+                <label class="item-label">Crockery</label>
+                <input class="item-check" type="checkbox" name="tasks.crockery">
+            </div>
+        </li>
 
-            <li>
-                <div class="list-item">
-                    <label class="item-label">Hall decoration</label>
-                    <input class="item-check" type="checkbox">
-                </div>
-            </li>
+        <li>
+            <div class="list-item">
+                <label class="item-label">Cake</label>
+                <input class="item-check" type="checkbox" name="tasks.cake">
+            </div>
+        </li>
 
-            <li>
-                <div class="list-item">
-                    <label class="item-label">Photographer</label>
-                    <input class="item-check" type="checkbox">
-                </div>
-            </li>
+        <li>
+            <div class="list-item">
+                <label class="item-label">Box for gifts</label>
+                <input class="item-check" type="checkbox" name="tasks.box">
+            </div>
+        </li>
 
-            <li>
-                <div class="list-item">
-                    <label class="item-label">Confirm menu</label>
-                    <input class="item-check" type="checkbox">
-                </div>
-            </li>	            
-        </ul>		
-    </form>
+        <li>
+            <div class="list-item">
+                <label class="item-label">Hall decoration</label>
+                <input class="item-check" type="checkbox" name="tasks.hall">
+            </div>
+        </li>
 
+        <li>
+            <div class="list-item">
+                <label class="item-label">Photographer</label>
+                <input class="item-check" type="checkbox" name="tasks.photographer">
+            </div>
+        </li>
+
+        <li>
+            <div class="list-item">
+                <label class="item-label">Confirm menu</label>
+                <input class="item-check" type="checkbox" name="tasks.menu">
+            </div>
+        </li>	            
+    </ul>	
+
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="../js/form2js.js"></script>
+    <script type="text/javascript" src="../js/js2form.js"></script>
+    <script src="../js/main.js"></script>
+    <script type="text/javascript">
+        function serializeTasks() {
+            var data = form2js(document.getElementById("tasks-list"), '.', false);
+            return data;
+        }
+
+        function populateTasks(data) {
+            js2form(document.getElementById("tasks-list"), data, '.', null, false);
+        }
+        function saveTasks() {
+            save( "tasks", serializeTasks() );
+        }
+        function restoreTasks() {
+            populateTasks( restore( "tasks" ) );    
+        }
+
+        $(".item-check").change(function () {
+            saveTasks();
+        });
+
+        $().ready(function () {
+            restoreTasks();
+        });
+        
+    </script>	
 
 </body>
 </html>

@@ -6,62 +6,77 @@
     <meta name="description" content="Groom page" />
 	<title>Groom</title>
     <link rel="stylesheet" href="../css/style.css"/>
-    <script src="../js/jquery-3.1.1.min.js"></script>
-    <script src="../js/main.js"></script>
 </head>
 <body id="groom-page-body">
 	<header>Groom</header>
-    <form>
-        <ul class="list">
-            <li class="list-item">
-                <div>
-                    <label class="item-label">Groom suit</label>
-                    <input class="item-check" type="checkbox">
-                </div>
-            </li>
+    <ul class="list" id="groom-list">
+        <li class="list-item">
+            <div>
+                <label class="item-label">Groom suit</label>
+                <input class="item-check" type="checkbox" name="groom.suit">
+            </div>
+        </li>
 
-             <li class="list-item">
-                <div>
-                    <label class="item-label">Groom shirt</label>
-                    <input class="item-check" type="checkbox">
-                </div>
-            </li>
-
-
-             <li class="list-item">
-                <div>
-                    <label class="item-label">Tie</label>
-                    <input class="item-check" type="checkbox">
-                </div>
-            </li>
+         <li class="list-item">
+            <div>
+                <label class="item-label">Groom shirt</label>
+                <input class="item-check" type="checkbox" name="groom.shirt">
+            </div>
+        </li>
 
 
-             <li class="list-item">
-                <div>
-                    <label class="item-label">Footwear</label>
-                    <input class="item-check" type="checkbox">
-                </div>
-            </li>
+         <li class="list-item">
+            <div>
+                <label class="item-label">Tie</label>
+                <input class="item-check" type="checkbox" name="groom.tie">
+            </div>
+        </li>
 
-            <li class="list-item">
-                <div>
-                    <label class="item-label">Stag-party</label>
-                    <input class="item-check" type="checkbox">
-                </div>
-            </li>
-        </ul>	
-    </form>
-	<!-- <script type="text/javascript">
-        $().ready(function () {
-            $("li").click(function () {
-                if( $(this).find("input[type='checkbox']").attr("checked") ){
-                    $(this).find("input[type='checkbox']").removeAttr("checked");
-                }else{
-                    $(this).find("input[type='checkbox']").attr("checked", true);
-                }
-            })
+
+         <li class="list-item">
+            <div>
+                <label class="item-label">Footwear</label>
+                <input class="item-check" type="checkbox" name="groom.footwear">
+            </div>
+        </li>
+
+        <li class="list-item">
+            <div>
+                <label class="item-label">Stag-party</label>
+                <input class="item-check" type="checkbox" name="groom.party">
+            </div>
+        </li>
+    </ul>	
+    
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="../js/form2js.js"></script>
+    <script type="text/javascript" src="../js/js2form.js"></script>
+    <script src="../js/main.js"></script>
+    <script type="text/javascript">
+        function serializeGroom() {
+            var data = form2js(document.getElementById("groom-list"), '.', false);
+            return data;
+        }
+
+        function populateGroom(data) {
+            js2form(document.getElementById("groom-list"), data, '.', null, false);
+        }
+        function saveGroom() {
+            save( "groom", serializeGroom() );
+        }
+        function restoreGroom() {
+            populateGroom( restore( "groom" ) );    
+        }
+
+        $(".item-check").change(function () {
+            saveGroom();
         });
-    </script> -->
+
+        $().ready(function () {
+            restoreGroom();
+        });
+        
+    </script>
 
 </body>
 </html>
