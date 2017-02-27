@@ -8,41 +8,17 @@
 	<title>Groom friends</title>
 
 	<link rel="stylesheet" type="text/css" href="../css/style.css" />
-    <script src="../js/jquery-3.1.1.min.js"></script>
-	<script src="../js/main.js"></script>
 </head>
 <body id="gf-page-body">
 	<header>Groom friends</header>
 
 	<ul >
-		<li class="list-item">
-			<div class="item-label">
-				AFFEFSFESdffsefesffsfsewefwefwfwefwefewfw
-			</div>
-			<div class="item-label">
-				79600767606
-			</div>
-			<div class="item-label">
-				1
-			</div>
-			<div class="btn-container btn-container-right">
-				<a class="btn" href="javascript:confirm('Are you sure?')">Delete</a>
-			</div>
-		</li>
-		<li class="list-item">
-			AFFEFSFES
-		</li>
-		<li class="list-item">
-			AFFEFSFES
-		</li>
-		<li class="list-item">
-			AFFEFSFES
-		</li>
+		
 	</ul>
 
 	<div id="modal" class="modal">
 		<div>
-			<div class="content-modal-container" id="form-modal">
+			<div class="content-modal-container" id="form-modal-gf">
 				<div><input type="text" placeholder="Enter name" name="gf.name"></div>
 				<div><input type="text" placeholder="Enter phone number" name="gf.phone"></div>
 				<div><input type="number" placeholder="Table number" name="gf.table"></div>
@@ -59,24 +35,83 @@
 		<a href="#modal" class="btn">Add friend</a>	
 	</div>
 
+	<script src="../js/jquery-3.1.1.min.js"></script>
+	<script src="../js/main.js"></script>
 	<script type="text/javascript" src="../js/form2js.js"></script>
 	<script type="text/javascript" src="../js/js2form.js"></script>
 	<script type="text/javascript">
+		var count = 0;
+		var list = [];
+
+		function restoreGf() {
+			restoredList = restore("gf");
+			if (restoredList !== null) {
+				list = restoredList;
+				count = list.length;
+			}
+		};
+
 		function serializeModalForm() {
-			var dataForm = form2js(document.getElementById("form-modal"), '.', true);
+			var dataForm = form2js(document.getElementById("form-modal-gf"), '.', false);
 			return dataForm;
 		}
-		function populateModalForm() {
-			var data = {
+		/*function populateModalForm(data) {
+			var emptyData = {
 				gf:{
-					name : "qwegwfwf",
-					phone: "12342-o0o4=",
-					table: "1223",
-					confirm: "on"
+					name : "",
+					phone: "`",
+					table: ""
 				}
 			};
-			js2form(document.getElementById("form-modal"), data, '.', null, true);
+			js2form(document.getElementById("form-modal-gf"), data, '.', null, false);
+		}*/
+
+		function saveGf() {
+			var newFriend = serializeModalForm();
+			list.push(newFriend.gf);
+			save( "gf", list );
 		}
+
+		function updateGf() {
+			$("ul").html("");
+			for (var i = 0; i < list.length; i++) {
+				var confirm;
+				if (list[i].confirm) {
+					confirm = "Confirmed!"
+				}else{
+					confirm = "Friend has not yet been confirmed!"
+				}
+				$("ul").append('<li class="list-item"><div class="item-label">'+ list[i].name +'</div><div class="item-label">'+ list[i].phone +'</div><div class="item-label">'+ list[i].table +'</div><div class="item-label">'+ confirm +'</div><div class="btn-container btn-container-right"><a class="btn" onclick="removeItem(this)">Delete</a></div></li>');
+			}
+		}
+
+		(function () {
+			restoreGf();
+			updateGf();
+		}());
+
+		$(".save").click(function () {
+			saveGf();
+			restoreGf();
+			updateGf();
+		});
+
+		function removeItem(button) {
+			if (!confirm("Are you sure?")) {
+				return;
+			}
+			var item = $(button).parent().parent().detach();
+			var name = $(item).find(".item-label").first().text();
+			var i;
+			for (i = 0; i < list.length; i++) {
+				if (list[i].name === name) {
+					break;
+				}
+			}
+			list.splice(i, 1);
+			save( "gf", list );
+		}
+
 	</script>
 
 </body>

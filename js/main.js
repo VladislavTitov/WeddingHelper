@@ -38,10 +38,10 @@
 });*/
 
 function save(key, data) {
-	localStorage.setItem(key, JSON.stringify(data));
+	localStorage.setItem(key.toString(), JSON.stringify(data));
 }
 
 function restore(key) {
-	return JSON.parse(localStorage.getItem(key));
+	return JSON.parse(localStorage.getItem(key.toString()));
 }
 

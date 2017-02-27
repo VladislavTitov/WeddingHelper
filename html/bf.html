@@ -8,23 +8,111 @@
 	<title>Bride friends</title>
 
 	<link rel="stylesheet" type="text/css" href="../css/style.css" />
-    <script src="../js/jquery-3.1.1.min.js"></script>
-	<script src="../js/main.js"></script>
 </head>
 <body id="bf-page-body">
 	<header>Bride friends</header>
-	<form>
-	<fieldset>
-		<legend>Guest 1</legend>
-		<ul style="list-style-type: none;">
-			<li>
-				<div><input type="text" placeholder="Enter name" ></div>
-				<div><input type="text" placeholder="Enter phone number"></div>
-				<div><input type="text" placeholder="Table number"></div>
-				<div><label for="">Confirmed?</label><input type="checkbox"></div>
-			</li>
-		</ul>
-	</fieldset>
-	</form>
+
+	<ul >
+		
+	</ul>
+	
+	<div id="modal" class="modal">
+		<div>
+			<div class="content-modal-container" id="form-modal-bf">
+				<div><input type="text" placeholder="Enter name" name="bf.name"></div>
+				<div><input type="text" placeholder="Enter phone number" name="bf.phone"></div>
+				<div><input type="number" placeholder="Table number" name="bf.table"></div>
+				<div><label>Confirmed?<input type="checkbox" name="bf.confirm"></label></div>
+				<div class="btn-container btn-container-right">
+					<a class="btn save" href="javascript:window.history.back()">Save</a>
+					<a class="btn close" href="javascript:window.history.back()">Close</a>
+				</div>	
+			</div>
+		</div>
+	</div>
+
+	<div class="btn-container btn-container-center">
+		<a href="#modal" class="btn">Add friend</a>	
+	</div>
+
+	<script src="../js/jquery-3.1.1.min.js"></script>
+	<script src="../js/main.js"></script>
+	<script type="text/javascript" src="../js/form2js.js"></script>
+	<script type="text/javascript" src="../js/js2form.js"></script>
+	<script type="text/javascript">
+		var count = 0;
+		var list = [];
+
+		function restoreBf() {
+			restoredList = restore("bf");
+			if (restoredList !== null) {
+				list = restoredList;
+				count = list.length;
+			}
+		};
+
+		function serializeModalForm() {
+			var dataForm = form2js(document.getElementById("form-modal-bf"), '.', false);
+			return dataForm;
+		}
+		/*function populateModalForm(data) {
+			var emptyData = {
+				gf:{
+					name : "",
+					phone: "`",
+					table: ""
+				}
+			};
+			js2form(document.getElementById("form-modal"), data, '.', null, false);
+		}*/
+
+		function saveBf() {
+			var newFriend = serializeModalForm();
+			list.push(newFriend.bf);
+			save( "bf", list );
+		}
+
+		function updateBf() {
+			$("ul").html("");
+			for (var i = 0; i < list.length; i++) {
+				var confirm;
+				if (list[i].confirm) {
+					confirm = "Confirmed!"
+				}else{
+					confirm = "Friend has not yet been confirmed!"
+				}
+				$("ul").append('<li class="list-item"><div class="item-label">'+ list[i].name +'</div><div class="item-label">'+ list[i].phone +'</div><div class="item-label">'+ list[i].table +'</div><div class="item-label">'+ confirm +'</div><div class="btn-container btn-container-right"><a class="btn" onclick="removeItem(this)">Delete</a></div></li>');
+			}
+		}
+
+		(function () {
+			restoreBf();
+			updateBf();
+		}());
+
+		$(".save").click(function () {
+			saveBf();
+			restoreBf();
+			updateBf();
+		});
+
+		function removeItem(button) {
+			if (!confirm("Are you sure?")) {
+				return;
+			}
+			var item = $(button).parent().parent().detach();
+			var name = $(item).find(".item-label").first().text();
+			var i;
+			for (i = 0; i < list.length; i++) {
+				if (list[i].name === name) {
+					break;
+				}
+			}
+			list.splice(i, 1);
+			save( "bf", list );
+		}
+
+	</script>
+
 </body>
 </html>
