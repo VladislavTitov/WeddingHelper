@@ -12,15 +12,100 @@
 <body id="notes-page-body">
   <header>Notes</header>
 
-    <textarea class="notes"></textarea>
+  <ul>
+    
+  </ul>
 
-    <div class="save-in-notes">
+  <div class="btn-container btn-container-center">
+    <a href="#modal" class="btn">Add note</a> 
+  </div>
 
-		<div class="btn-container"><a class="btn" href="javascript:window.history.back()" class="save">Save</a></div>
-   </div>
-	
+  <div id="modal" class="modal">
+    <div>
+    <div class="content-modal-container" id="form-modal-notes">
+      <textarea class="notes" id="newNote"></textarea> 
+      <div class="btn-container btn-container-right">
+          <a class="btn save" href="javascript:window.history.back()">Save</a>
+          <a class="btn close" href="javascript:window.history.back()">Close</a>
+        </div> 
+    </div>
+    </div>
+  </div>
 
     <script src="../js/jquery-3.1.1.min.js"></script>
     <script src="../js/main.js"></script>
+    <script type="text/javascript">
+    var count = 0;
+    var list = [];
+
+    function restoreNotes() {
+      restoredList = restore("notes");
+      if (restoredList !== null) {
+        list = restoredList;
+        count = list.length;
+      }
+    };
+
+    function serializeModalForm() {
+      var dataForm = $("#newNote").val();
+      return dataForm;
+    }
+
+    function clearForm() {
+      var dataForm = $("#newNote").val("");
+    }
+    /*function populateModalForm(data) {
+      var emptyData = {
+        gf:{
+          name : "",
+          phone: "`",
+          table: ""
+        }
+      };
+      js2form(document.getElementById("form-modal-gf"), data, '.', null, false);
+    }*/
+
+    function saveNotes() {
+      var newNote = serializeModalForm();
+      list.push(newNote);
+      save( "notes", list );
+      clearForm();
+    }
+
+    function updateNotes() {
+      $("ul").html("");
+      for (var i = 0; i < list.length; i++) {
+        $("ul").append('<li class="list-item"><div class="item-label">'+ list[i] +'</div><div class="item-label"></div><div class="btn-container btn-container-right"><a class="btn" onclick="removeItem(this)">Delete</a></div></li>');
+      }
+    }
+
+    (function () {
+      restoreNotes();
+      updateNotes();
+    }());
+
+    $(".save").click(function () {
+      saveNotes();
+      restoreNotes();
+      updateNotes();
+    });
+
+    function removeItem(button) {
+      if (!confirm("Are you sure?")) {
+        return;
+      }
+      var item = $(button).parent().parent().detach();
+      var note = $(item).find(".item-label").first().text();
+      var i;
+      for (i = 0; i < list.length; i++) {
+        if (list[i] === note) {
+          break;
+        }
+      }
+      list.splice(i, 1);
+      save( "notes", list );
+    }
+
+  </script>
 </body>
 </html>

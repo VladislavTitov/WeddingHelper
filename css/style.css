@@ -331,14 +331,13 @@ ul.list li:active{
 /* Notes page */
 #notes-page-body{
 	background: url("../img/notesO.png") no-repeat center center fixed;
-     background-size: cover; 
+    background-size: cover; 
     -webkit-background-size: cover;
 }
 
 .notes {
 		background: transparent;
 	    border: 1px solid #EEEEEE;
-        box-shadow: 1px 1px 0 #DDDDDD;
         display: block;
         font-family: 'Dancing Script',cursive;
         font-size: 1em;
@@ -349,8 +348,8 @@ ul.list li:active{
         height: 550px;
         width: 100%;
 
-        background-image: -moz-linear-gradient(top , transparent, transparent 49px,#E7EFF8 0px);
-        background-image: -webkit-linear-gradient(top , transparent, transparent 49px,#E7EFF8 0);
+        background-image: -moz-linear-gradient(top , transparent, transparent 49px,#dfdfdf 0px);
+        background-image: -webkit-linear-gradient(top , transparent, transparent 49px,#dfdfdf 0);
        
         background-size: 100% 50px;
 
@@ -359,9 +358,6 @@ ul.list li:active{
 
 .notes:focus {
     outline: none;
-}
-.save-in-notes{
-	text-align: right;
 }
 
 
