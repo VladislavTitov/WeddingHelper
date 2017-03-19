@@ -2,8 +2,6 @@
 
 ## **a Tizen Web Project**
 
-### *coursework*
-
 *by*
 - *Titov Vladislav*
 - *Shalafaeva Elvira*

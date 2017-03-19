@@ -274,16 +274,6 @@ ul.list li:active{
 }
 
 
-
-/* Budget page */
-#budget-page-body{
-	background: url("../img/budgetO.png") no-repeat center center fixed;
-     background-size: cover; 
-    -webkit-background-size: cover;
-}
-
-
-
 /* Groom friends page */
 #gf-page-body{
 	background: url("../img/gfO.png") no-repeat center center fixed;
